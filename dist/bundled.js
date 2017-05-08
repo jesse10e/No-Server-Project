@@ -3,15 +3,16 @@ angular.module('armoryApp', ['ui.router'])
         $stateProvider
             .state('home',{
               url:'/',
-              templateUrl:'./No-Server-Project/dist/app/views/home.html'
+              templateUrl:'../app/views/home.html'
             })
             .state('pvp',{
                 url:'/pvp',
-                templateUrl: "./No-Server-Project/No-Server-Project/dist/app/views/pvp.html"
+                templateUrl: "../app/views/pvp.html",
+                controller:'pvpCtrl'
             })
             .state('characters', {
               url:'/characterlookup',
-              templateUrl:'./No-Server-Project/dist/app/views/characters.html',
+              templateUrl:'../app/views/characters.html',
               controller:'charactersCtrl'
             });
 
@@ -79,14 +80,14 @@ angular.module('armoryApp').controller('mainCtrl', ["$scope", function($scope) {
 
 }])
 
-angular.module('armoryApp').controller(function($scope, mainSrv) {
+angular.module('armoryApp').controller('pvpCtrl', ["$scope", "mainSrv", function($scope, mainSrv) {
   $scope.getLeaderboard = function(bracket) {
     mainSrv.getLeaderboard(bracket)
       .then(function(respone) {
         $scope.bracket = response.data
       })
   }
-})
+}])
 
 
 angular.module('armoryApp').service('mainSrv', ["$http", function($http) {

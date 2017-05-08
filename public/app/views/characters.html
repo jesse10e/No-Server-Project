@@ -3,7 +3,7 @@
 
     <input type="text" ng-model='name' placeholder='Character Name'>
     <input type="text" ng-model='realm' placeholder='Server'>
-    <button style="height:30px; width:30px; border-radius:50%;" type="button" name="Search" ng-click='getCharacters(name, realm)'></button>
+    <button style="height:20px; width:20px; border-radius:50%;" type="button" name="Search" ng-click='getCharacters(name, realm)'></button>
     <div class="char_info">
       <img ng-src='{{"http://render-api-us.worldofwarcraft.com/static-render/us/" + character.thumbnail}}' alt="" ng-show="character">
       <br><a>Name:</a>{{character.name}}<br>

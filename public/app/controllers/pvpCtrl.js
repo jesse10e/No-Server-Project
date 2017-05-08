@@ -1,4 +1,4 @@
-angular.module('armoryApp').controller(function($scope, mainSrv) {
+angular.module('armoryApp').controller('pvpCtrl', function($scope, mainSrv) {
   $scope.getLeaderboard = function(bracket) {
     mainSrv.getLeaderboard(bracket)
       .then(function(respone) {
